@@ -15,7 +15,7 @@ const Contact = () => {
         </span>
         <div className="flex justify-center space-x-6 mt-8">
           <a href="https://github.com/leonardobrahim" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">GitHub</a>
-          <a href="https://linkedin.com/in/leonardobrahim" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/leonardo-brahim-tavares-837848208/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-2xl">LinkedIn</a>
         </div>
       </div>
     </section>
