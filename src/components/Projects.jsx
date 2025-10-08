@@ -1,30 +1,25 @@
 import React from 'react';
 
 const ProjectCard = ({ title, description, tech, link, image }) => (
-  <div className="bg-gray-800 rounded-lg shadow-lg hover:shadow-cyan-500/50 transform hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col">
-    {/* Imagem do Card */}
-    <img className="w-full h-48 object-cover" src={image} alt={title} />
-
-    {/* Conteúdo do Card */}
+  <div className="bg-gray-900 bg-opacity-50 rounded-lg card-border-glow overflow-hidden flex flex-col">
+    <a href={link}>
+      <img className="w-full h-56 object-cover" src={image} alt={title} />
+    </a>
     <div className="p-6 flex flex-col flex-grow">
-      <h3 className="text-2xl font-bold mb-2">{title}</h3>
+      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
       <p className="text-gray-400 mb-4 flex-grow">{description}</p>
-      
-      {/* Tags de Tecnologia */}
       <div className="mb-4">
         {tech.map(t => (
-          <span key={t} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-cyan-400 mr-2 mb-2">
+          <span key={t} className="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-purple-300 mr-2 mb-2">
             {t}
           </span>
         ))}
       </div>
-
-      {/* Botão/Link para o Projeto */}
       <a 
         href={link} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="inline-flex items-center justify-center mt-auto px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg transition-all hover:scale-105 duration-300"
+        className="button-secondary-glow mt-auto text-center font-semibold text-white py-2 px-4 rounded-lg"
       >
         Ver Projeto &rarr;
       </a>
@@ -32,36 +27,35 @@ const ProjectCard = ({ title, description, tech, link, image }) => (
   </div>
 );
 
-
 const Projects = () => {
   const myProjects = [
     {
-      title: 'Projeto Exemplo 1',
-      description: 'Descrição do primeiro projeto para melhor visualização do layout em grade.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://github.com',
-      image: 'src/assets/image-1.jpg' 
+      title: 'Sistema de E-commerce',
+      description: 'Plataforma completa de e-commerce com carrinho de compras, checkout e painel de administração.',
+      tech: ['React', 'Node.js', 'PostgreSQL'],
+      link: '#',
+      image: 'https://placehold.co/600x400/101010/C084FC?text=E-commerce' 
     },
     {
-      title: 'Projeto Exemplo 2',
-      description: 'Descrição do segundo projeto para melhor visualização do layout em grade.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://github.com',
-      image: 'src/assets/image-2.jpg' 
+      title: 'Aplicativo de Tarefas',
+      description: 'Um aplicativo de gerenciamento de tarefas com autenticação de usuário e sincronização em tempo real.',
+      tech: ['React Native', 'Firebase'],
+      link: '#',
+      image: 'https://placehold.co/600x400/101010/C084FC?text=Task+App' 
     },
     {
-      title: 'Projeto Exemplo 3',
-      description: 'Descrição do terceiro projeto para melhor visualização do layout em grade.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://github.com',
-      image: 'src/assets/image-3.jpg' 
+      title: 'Landing Page Animada',
+      description: 'Uma landing page para um produto de SaaS, focada em micro-interações e animações com GSAP.',
+      tech: ['HTML', 'TailwindCSS', 'GSAP'],
+      link: '#',
+      image: 'https://placehold.co/600x400/101010/C084FC?text=Landing+Page' 
     },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900 text-white">
+    <section id="projects" className="py-24">
       <div className="container mx-auto px-6 md:px-12">
-        <h2 className="text-4xl font-bold text-center mb-12">Meus Projetos</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-glow">Meus Projetos</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {myProjects.map(project => (
             <ProjectCard key={project.title} {...project} />
@@ -73,3 +67,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

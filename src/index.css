@@ -1,7 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0A;
+  font-family: 'Inter', sans-serif;
+  color: #E5E7EB; /* gray-200 */
+}
+
+.gradient-bg {
+  background: radial-gradient(ellipse at top, #1E1B4B 0%, #0A0A0A 60%);
+}
+
+.text-glow {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 10px rgba(192, 132, 252, 0.3);
+}
+
+.card-border-glow {
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.3s ease;
+   box-shadow: 0 0 15px rgba(192, 132, 252, 0);
+}
+
+.card-border-glow:hover {
+   border-color: rgba(192, 132, 252, 0.5);
+   box-shadow: 0 0 25px rgba(192, 132, 252, 0.2);
+}
+
+.button-primary-glow {
+  background: linear-gradient(to right, #8B5CF6, #C084FC);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
+}
+.button-primary-glow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.7);
+}
+
+.button-secondary-glow {
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+.button-secondary-glow:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: #C084FC;
+  transform: scale(1.05);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(var(--scale, 1));
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(calc(var(--scale, 1) * 1.05));
+    opacity: 1;
+  }
 }

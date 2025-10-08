@@ -1,14 +1,14 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
+import About from './components/About.jsx';
+import Projects from './components/Projects.jsx';
+import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
-    <div className="bg-gray-900">
+    <div className="gradient-bg">
       <Header />
       <main>
         <Hero />
@@ -22,3 +22,4 @@ function App() {
 }
 
 export default App;
+
