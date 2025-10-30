@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ProjectCard = ({ title, description, tech, link, image }) => (
+const ProjectCard = ({ title, description, tech, link_projeto, link_repo, image }) => (
   <div className="bg-gray-900 bg-opacity-50 rounded-lg card-border-glow overflow-hidden flex flex-col">
-    <a href={link}>
+    <a href={link_projeto}>
       <img className="w-full h-56 object-cover" src={image} alt={title} />
     </a>
     <div className="p-6 flex flex-col flex-grow">
@@ -15,14 +15,24 @@ const ProjectCard = ({ title, description, tech, link, image }) => (
           </span>
         ))}
       </div>
-      <a 
-        href={link} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="button-secondary-glow mt-auto text-center font-semibold text-white py-2 px-4 rounded-lg"
-      >
-        Ver Projeto &rarr;
-      </a>
+      <div className="flex space-x-4">
+        <a 
+          href={link_projeto} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="button-secondary-glow mt-auto text-center font-semibold text-white py-1 px-2 rounded-lg"
+        >
+          Acessar Projeto
+        </a>
+        <a 
+          href={link_repo} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="button-secondary-glow mt-auto text-center font-semibold text-white py-1 px-2 rounded-lg"
+        >
+          Acessar Repositório
+        </a>
+      </div>
     </div>
   </div>
 );
@@ -33,21 +43,24 @@ const Projects = () => {
       title: 'Sistema de E-commerce',
       description: 'Plataforma completa de e-commerce com carrinho de compras, checkout e painel de administração.',
       tech: ['React', 'Node.js', 'PostgreSQL'],
-      link: '#',
+      link_projeto: '#',
+      link_repo: '#',
       image: 'https://placehold.co/600x400/101010/C084FC?text=E-commerce' 
     },
     {
       title: 'Aplicativo de Tarefas',
       description: 'Um aplicativo de gerenciamento de tarefas com autenticação de usuário e sincronização em tempo real.',
       tech: ['React Native', 'Firebase'],
-      link: '#',
+      link_projeto: '#',
+      link_repo: '#',
       image: 'https://placehold.co/600x400/101010/C084FC?text=Task+App' 
     },
     {
       title: 'Landing Page Animada',
       description: 'Uma landing page para um produto de SaaS, focada em micro-interações e animações com GSAP.',
       tech: ['HTML', 'TailwindCSS', 'GSAP'],
-      link: '#',
+      link_projeto: '#',
+      link_repo: '#',
       image: 'https://placehold.co/600x400/101010/C084FC?text=Landing+Page' 
     },
   ];
